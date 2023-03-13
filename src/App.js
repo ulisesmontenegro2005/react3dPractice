@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/header/header';
+import { Main } from './components/main/main'
+import { Section } from './components/section/section'
+import { Footer } from './components/footer/footer'
+import styled from 'styled-components';
+
+const Container = styled.div`
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  scroll-behavior: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  color: white;
+  background-image: url('./img/bg.jpeg');
+  `
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <Header/>
+      <Main/>
+      <Section/>
+      <Footer/>
+    </Container>
   );
 }
 
